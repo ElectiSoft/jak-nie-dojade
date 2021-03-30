@@ -3,11 +3,26 @@ import { useState, useEffect } from 'react'
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [stops, setStops] = useState();
+  const [stopID, setStopID] = useState();
+  
+  const getStopID = stopName => {
+    if(stops) {
+      const stop = stops["2021-03-30"].stops.find(item => item.stopName === stopName);
+      if (stop) {
+        return stop.stopId;
+      }
+    }
+  }
 
   useEffect(() => {
-    fetch("https://cors-anywhere.herokuapp.com/https://ckan.multimediagdansk.pl/dataset/c24aa637-3619-4dc2-a171-a23eec8f2172/resource/4c4025f0-01bf-41f7-a39f-d156d201b82b/download/stops.json")
-    .then(result => result.json())
-    .then(result => setStops(result))}, []);
+    fetch("/stops.json")
+    .then(response => response.json())
+    .then(data => setStops(data))
+  }, []);
+
+  useEffect(() => {
+    setStopID(getStopID(searchQuery))
+  }, [searchQuery])
 
   if (!stops) {
     return <>loading</>
@@ -15,11 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          <input type="text" onChange={e => setSearchQuery(e.target.value)} />
-        </p>
-      </header>
+      <input type="text" onChange={e => setSearchQuery(e.target.value)} />
     </div>
   );
 }
