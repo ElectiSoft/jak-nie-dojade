@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import StopSelect from './StopSelect.js'
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -7,9 +8,9 @@ function App() {
   
   const getStopID = stopName => {
     if(stops) {
-      const stop = stops["2021-03-30"].stops.find(item => item.stopName === stopName);
+      const stop = stops["2021-03-30"].stops.filter(item => item.stopName === stopName);
       if (stop) {
-        return stop.stopId;
+        return stop.map(item => item.stopId);
       }
     }
   }
@@ -31,6 +32,7 @@ function App() {
   return (
     <div className="App">
       <input type="text" onChange={e => setSearchQuery(e.target.value)} />
+      <StopSelect stops={stopID} />
     </div>
   );
 }
