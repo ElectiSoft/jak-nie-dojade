@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <input type="text" onChange={e => setSearchQuery(e.target.value)} />
-      <StopSelect stops={stopID} />
+      {stopID ? <StopSelect stops={stopID} /> : <></>}
     </div>
   );
 }
