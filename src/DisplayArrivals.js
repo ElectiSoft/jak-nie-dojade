@@ -23,6 +23,7 @@ export const DisplayArrivals = ({stopID}) => {
             return arrivals
         })().then(setArrivalsData)
     },[stopID]);
+
     
     if(arrivalsData && arrivalsData[0]){
         return(
@@ -31,7 +32,7 @@ export const DisplayArrivals = ({stopID}) => {
                     <p className = "Line">Linia: {item.line}</p>
                     <p className = "Headsign">W kierunku: {item.headsign}</p>
                     <p className = "TheoreticalTime">Planowy odjazd: {item.theoreticalTime}</p>
-                    <p className = "Delay">Opóźnienie: {item.delay}</p>
+                    <p className = "Delay">Opóźnienie: {(item.delay-(item.delay%60))/60} min.</p>
                     <p className = "DepartureTime">Odjazd z opóźnieniem: {item.departureTime}</p>
                     <p className = "Separator">===============================================</p>
                 </div>))}
