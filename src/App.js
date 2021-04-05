@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import StopSelect from './StopSelect.js'
+import {DisplayArrivals} from './DisplayArrivals.js'
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [stops, setStops] = useState();
+  const [stopsID, setStopsID] = useState();
   const [stopID, setStopID] = useState();
   
   const getStopID = stopName => {
@@ -22,7 +24,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setStopID(getStopID(searchQuery))
+    setStopsID(getStopID(searchQuery))
   }, [searchQuery])
 
   if (!stops) {
@@ -32,7 +34,8 @@ function App() {
   return (
     <div className="App">
       <input type="text" onChange={e => setSearchQuery(e.target.value)} />
-      {stopID ? <StopSelect stops={stopID} /> : <></>}
+      {stopsID ? <StopSelect stops={stopsID} onChange={setStopID} /> : <></>}
+      {stopsID ? <DisplayArrivals stopID={stopID} /> : <></>}
     </div>
   );
 }

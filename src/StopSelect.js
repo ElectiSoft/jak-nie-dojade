@@ -24,9 +24,9 @@ function StopSelect(props) {
     }, [props])
 
     if(delays && delays.length) {
-        return delays.map(item => {
+        return delays.map((item, index) => {
             if(item[0] != "") {
-                return <button onClick={() => console.log(item[1])}>{item[0].join(", ")}</button>
+                return <button onClick={() => props.onChange(item[1])} key={index}>{item[0].join(", ")}</button>
             }
         })
     }
