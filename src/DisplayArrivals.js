@@ -29,12 +29,20 @@ export const DisplayArrivals = ({stopID}) => {
         return(
             <div className = "DisplayArrivals">
                 {arrivalsData[0].map((item, index) => (<div key={index}> 
-                    <p className = "Line">Linia: {item.line}</p>
-                    <p className = "Headsign">W kierunku: {item.headsign}</p>
-                    <p className = "TheoreticalTime">Planowy odjazd: {item.theoreticalTime}</p>
-                    <p className = "Delay">Opóźnienie: {(item.delay-(item.delay%60))/60} min.</p>
-                    <p className = "DepartureTime">Odjazd z opóźnieniem: {item.departureTime}</p>
-                    <p className = "Separator">===============================================</p>
+                    <div className = "LineDiv">
+                        <p className = "Line">{item.line}</p>
+                    </div>
+                    <div className = "InfoDiv">
+                        <p className = "Headsign">{item.headsign}</p>
+                        <p className = "TimeText">Odjazd o:</p>
+                        <p className = "DepartureTime">{item.departureTime}</p>
+                        {(item.delay-(item.delay%60))/60 != 0 ?
+                            <p className = "DelayInfo">{item.theoreticalTime} {(item.delay-(item.delay%60))/60 < 0 ?
+                                <>- {((item.delay-(item.delay%60))/60)*-1}</> : 
+                                <>+ {(item.delay-(item.delay%60))/60}</>} min.</p> : 
+                            <p className = "DelayInfo">Brak opóźnienia</p>}
+                        <p className = "Separator">==================</p>
+                    </div>
                 </div>))}
             </div>
         );
