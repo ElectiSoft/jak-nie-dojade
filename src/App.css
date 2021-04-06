@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@media only screen and (max-width: 600px) { /* mobile css */
+  .App {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .StopSelectButton{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    width: 82vw;
+
+    padding: 1vw;
+    border-radius: 0.5vw;
+    border-width: 0;
+    margin: 0.5vw;
+    background-color: #20265C;
+    color: #BEC4F6;
+    text-align: left;
+  }
+
+  .StopSelectButton:focus{
+    outline: none;
+    background-color: #454D94;
+  }
+  
+  .StopInput{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+  
+    margin: 1vw;
+    width: 80vw;
+
+    border-width: 0;
+    border-radius: 0.5vw;
+    background-color: #3B4069;
+    padding: 1vw;
+
+    color: #BEC4F6;
+  }
+  
+  .Logo{
+    margin: 1vw;
+    margin-bottom: 2vw;
+    width: 55vw;
+  }
+  
+  body{
+    background-color: #222435;
+  }
+}
+
+@media only screen and (min-width: 601px) { /* desktop css */
+  .App {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .StopSelectButton{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    width: 42vw;
+
+    padding: 1vw;
+    border-radius: 0.5vw;
+    border-width: 0;
+    margin: 5px;
+    background-color: #20265C;
+    color: #BEC4F6;
+    text-align: left;
+  }
+
+  .StopSelectButton:focus{
+    outline: none;
+    background-color: #454D94;
+  }
+  
+  .StopInput{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 36px;
+  
+    margin: 1vw;
+    width: 40vw;
+
+    border-width: 0;
+    border-radius: 0.5vw;
+    background-color: #3B4069;
+    padding: 1vw;
+
+    color: #BEC4F6;
+  }
+
+  .Logo{
+    margin: 1vw;
+    margin-bottom: 2vw;
+    width: 20vw;
+  }
+  
+  body{
+    background-color: #222435;
+  }
+}
