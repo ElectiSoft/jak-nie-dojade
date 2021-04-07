@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@media only screen and (max-width: 400px) { /* small af fricking smartwatch or sth idk mobile css */
+  .App {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .StopSelectButton {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    width: 82vw;
+
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 0;
+    margin: 5px;
+    background-color: #20265C;
+    color: #BEC4F6;
+    text-align: left;
+    user-select: none;
+  }
+
+  .StopSelectButton:focus {
+    outline: none;
+    background-color: #454D94;
+  }
+  
+  .StopInput {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+  
+    margin: 10px;
+    width: 80vw;
+
+    border-width: 0;
+    border-radius: 10px;
+    background-color: #3B4069;
+    padding: 10px;
+
+    color: #BEC4F6;
+    user-select: none;
+  }
+  
+  .Logo {
+    margin: 10px;
+    margin-bottom: 2vw;
+    width: 55vw;
+    user-select: none;
+  }
+  
+  body {
+    background-color: #222435;
+  }
+
+  .DisplayArrivals{
+    max-width: 82vw;
+    display: grid;
+    grid-template-columns: repeat(1 ,minmax(180px, 1fr));
+    grid-gap: 15px;
+    margin:0 auto;
+    justify-content: center;
+    user-select: none;
+  }
+
+  .LineDiv {
+    background-color: #78749D;
+    font-family: 'Ubuntu', sans-serif;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 24px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  .Card {
+    position: relative;
+    height: 180px;
+    width: 180px;
+  }
+
+  .InfoDiv {
+    background-color: #A8A5C3;
+    font-family: 'Ubuntu', sans-serif;
+    height: 150px;
+    width: 75vw;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Line {
+    color: #E2E5FF;
+  }
+
+  .Headsign {
+    font-size: 16px;
+    color: #E2E5FF;
+    position: absolute;
+    top: 12px;
+    width: 95px;
+  }
+
+  .TimeText {
+    position: absolute;
+    top: 60px;
+    left: 23px;
+    color: #4E5278;
+    font-size: 18px;
+  }
+
+  .DepartureTime {
+    position: absolute;
+    top: 75px;
+    font-size: 42px;
+    color: #E2E5FF;
+  }
+
+  .DelayInfo {
+    position: absolute;
+    top: 125px;
+  }
+
+  .stopSelect {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 401px) { /* normal mobile css */
+  .App {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .StopSelectButton {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    width: 82vw;
+
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 0;
+    margin: 5px;
+    background-color: #20265C;
+    color: #BEC4F6;
+    text-align: left;
+    user-select: none;
+  }
+
+  .StopSelectButton:focus {
+    outline: none;
+    background-color: #454D94;
+  }
+  
+  .StopInput {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+  
+    margin: 10px;
+    width: 80vw;
+
+    border-width: 0;
+    border-radius: 10px;
+    background-color: #3B4069;
+    padding: 10px;
+
+    color: #BEC4F6;
+    user-select: none;
+  }
+  
+  .Logo {
+    margin: 10px;
+    margin-bottom: 2vw;
+    width: 55vw;
+    user-select: none;
+    user-select: none;
+  }
+  
+  body {
+    background-color: #222435;
+  }
+
+  .DisplayArrivals{
+    max-width: 82vw;
+    display: grid;
+    grid-template-columns: repeat(2 ,minmax(180px, 1fr));
+    grid-gap: 15px;
+    margin:0 auto;
+    justify-content: center;
+    user-select: none;
+  }
+
+  .LineDiv {
+    background-color: #78749D;
+    font-family: 'Ubuntu', sans-serif;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 24px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  .Card {
+    position: relative;
+    height: 180px;
+    width: 180px;
+  }
+
+  .InfoDiv {
+    background-color: #A8A5C3;
+    font-family: 'Ubuntu', sans-serif;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Line {
+    color: #E2E5FF;
+  }
+
+  .Headsign {
+    font-size: 16px;
+    color: #E2E5FF;
+    position: absolute;
+    top: 12px;
+    width: 95px;
+  }
+
+  .TimeText {
+    position: absolute;
+    top: 60px;
+    left: 23px;
+    color: #4E5278;
+    font-size: 18px;
+  }
+
+  .DepartureTime {
+    position: absolute;
+    top: 75px;
+    font-size: 42px;
+    color: #E2E5FF;
+  }
+
+  .DelayInfo {
+    position: absolute;
+    top: 125px;
+  }
+
+  .stopSelect {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 601px) { /* tablet css */
+  .App {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  .StopSelectButton {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    width: 72vw;
+
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 0;
+    margin: 5px;
+    background-color: #20265C;
+    color: #BEC4F6;
+    text-align: left;
+    user-select: none;
+  }
+
+  .StopSelectButton:focus {
+    outline: none;
+    background-color: #454D94;
+  }
+  
+  .StopInput {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+  
+    margin: 10px;
+    width: 70vw;
+
+    border-width: 0;
+    border-radius: 10px;
+    background-color: #3B4069;
+    padding: 10px;
+
+    color: #BEC4F6;
+    user-select: none;
+    
+  }
+  
+  .Logo {
+    margin: 10px;
+    margin-bottom: 2vw;
+    width: 40vw;
+    user-select: none;
+    user-select: none;
+  }
+  
+  body {
+    background-color: #222435;
+  }
+
+  .DisplayArrivals{
+    max-width: 72vw;
+    display: grid;
+    grid-template-columns: repeat(3 ,minmax(180px, 1fr));
+    grid-gap: 15px;
+    margin:0 auto;
+    justify-content: center;
+    user-select: none;
+  }
+
+  .LineDiv {
+    background-color: #78749D;
+    font-family: 'Ubuntu', sans-serif;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 24px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  .Card {
+    position: relative;
+    height: 180px;
+    width: 180px;
+  }
+
+  .InfoDiv {
+    background-color: #A8A5C3;
+    font-family: 'Ubuntu', sans-serif;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Line {
+    color: #E2E5FF;
+  }
+
+  .Headsign {
+    font-size: 16px;
+    color: #E2E5FF;
+    position: absolute;
+    top: 12px;
+    width: 95px;
+  }
+
+  .TimeText {
+    position: absolute;
+    top: 60px;
+    left: 23px;
+    color: #4E5278;
+    font-size: 18px;
+  }
+
+  .DepartureTime {
+    position: absolute;
+    top: 75px;
+    font-size: 42px;
+    color: #E2E5FF;
+  }
+
+  .DelayInfo {
+    position: absolute;
+    top: 125px;
+  }
+
+  .stopSelect {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (min-width: 901px) { /* desktop css */
+  .App {
+    text-align: center;
+  }
+  
+  .StopSelectButton {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    width: 42vw;
+
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 0;
+    margin: 5px;
+    background-color: #20265C;
+    color: #BEC4F6;
+    text-align: left;
+    user-select: none;
+  }
+
+  .StopSelectButton:focus {
+    outline: none;
+    background-color: #454D94;
+  }
+  
+  .StopInput {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 36px;
+  
+    margin: 10px;
+    width: 40vw;
+
+    border-width: 0;
+    border-radius: 10px;
+    background-color: #3B4069;
+    padding: 10px;
+
+    color: #BEC4F6;
+    user-select: none;
+  }
+
+  .Logo {
+    margin: 10px;
+    margin-bottom: 2vw;
+    width: 20vw;
+    user-select: none;
+  }
+  
+  body {
+    background-color: #222435;
+  }
+
+  .DisplayArrivals{
+    max-width: 42vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(180px, 1fr));
+    grid-gap: 15px;
+    margin:0 auto;
+    justify-content: center;
+    user-select: none;
+  }
+
+  .LineDiv {
+    background-color: #78749D;
+    font-family: 'Ubuntu', sans-serif;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 24px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  .Card {
+    position: relative;
+    height: 180px;
+    width: 180px;
+  }
+
+  .InfoDiv {
+    background-color: #A8A5C3;
+    font-family: 'Ubuntu', sans-serif;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .Line {
+    color: #E2E5FF;
+  }
+
+  .Headsign {
+    font-size: 16px;
+    color: #E2E5FF;
+    position: absolute;
+    top: 12px;
+    width: 95px;
+  }
+
+  .TimeText {
+    position: absolute;
+    top: 60px;
+    left: 23px;
+    color: #4E5278;
+    font-size: 18px;
+  }
+
+  .DepartureTime {
+    position: absolute;
+    top: 75px;
+    font-size: 42px;
+    color: #E2E5FF;
+  }
+
+  .DelayInfo {
+    position: absolute;
+    top: 125px;
+  }
+
+  .stopSelect {
+    margin-bottom: 15px;
+  }
+}

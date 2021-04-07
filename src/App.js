@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import StopSelect from './StopSelect.js'
 import {DisplayArrivals} from './DisplayArrivals.js'
+import logo from './assets/images/logo.svg'
+import './App.css';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,6 +26,11 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if(!searchQuery){
+      setStopsID(undefined);
+      setStopID(undefined);
+      return;
+    }
     setStopsID(getStopID(searchQuery))
   }, [searchQuery])
 
@@ -33,8 +40,11 @@ function App() {
 
   return (
     <div className="App">
-      <input type="text" onChange={e => setSearchQuery(e.target.value)} />
-      {stopsID ? <StopSelect stops={stopsID} onChange={setStopID} /> : <></>}
+      <div className="LogoDiv">
+        <img src={logo} className="Logo"/>
+      </div>
+      <input type="text" onChange={e => setSearchQuery(e.target.value)} className="StopInput" placeholder="Wprowadź nazwę przystanku"/>
+      <div className='stopSelect'>{stopsID ? <StopSelect stops={stopsID} onChange={setStopID} /> : <></>}</div>
       {stopsID ? <DisplayArrivals stopID={stopID} /> : <></>}
     </div>
   );

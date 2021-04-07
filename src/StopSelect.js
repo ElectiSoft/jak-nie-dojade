@@ -13,12 +13,12 @@ function StopSelect(props) {
                 headsigns.push([data.delay.map(item => item.headsign), props.stops[i]]);
             }
             headsigns = headsigns.map(arr => [arr[0].reduce((acc, item) => {
-                const prevOcc = acc.find(element => element === item)
+                const prevOcc = acc.find(element => element === item);
                 if(!prevOcc) {
-                    acc.push(item)
+                    acc.push(item);
                 }
                 return acc
-            }, []), arr[1]])
+            }, []), arr[1]]);
             setDelays(headsigns);
         })()
     }, [props])
@@ -26,12 +26,16 @@ function StopSelect(props) {
     if(delays && delays.length) {
         return delays.map((item, index) => {
             if(item[0] != "") {
-                return <button onClick={() => props.onChange(item[1])} key={index}>{item[0].join(", ")}</button>
+                return(
+                <div className="StopSelectionButtons">
+                    <button onClick={() => props.onChange(item[1])} key={index} className="StopSelectButton">{item[0].join(", ")}</button>
+                </div>
+                );
             }
         })
     }
 
-    return null
+    return null;
 }
 
 export default StopSelect
