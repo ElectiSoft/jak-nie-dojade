@@ -39,7 +39,7 @@ function App() {
         <img src={logo} className="Logo"/>
       </div>
       <input type="text" onChange={e => setSearchQuery(e.target.value)} className="StopInput" placeholder="Wprowadź nazwę przystanku"/>
-      {stopsID ? <StopSelect stops={stopsID} onChange={setStopID} /> : <></>}
+      <div className='stopSelect'>{stopsID ? <StopSelect stops={stopsID} onChange={setStopID} /> : <></>}</div>
       {stopsID ? <DisplayArrivals stopID={stopID} /> : <></>}
     </div>
   );

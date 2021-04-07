@@ -28,19 +28,19 @@ export const DisplayArrivals = ({stopID}) => {
     if(arrivalsData && arrivalsData[0]){
         return(
             <div className = "DisplayArrivals">
-                {arrivalsData[0].map((item, index) => (<div key={index}> 
+                {arrivalsData[0].map((item, index) => (<div className='Card' key={index}> 
                     <div className = "LineDiv">
                         <p className = "Line">{item.line}</p>
                     </div>
                     <div className = "InfoDiv">
-                        <p className = "Headsign">{item.headsign}</p>
-                        <p className = "TimeText">Odjazd o:</p>
-                        <p className = "DepartureTime">{item.departureTime}</p>
+                        <div className = "Headsign">{item.headsign.length <= 22 ? item.headsign : item.headsign.slice(0, 22) + "..."}</div>
+                        <div className = "TimeText">Odjazd o:</div>
+                        <div className = "DepartureTime">{item.departureTime}</div>
                         {(item.delay-(item.delay%60))/60 != 0 ?
-                            <p className = "DelayInfo">{item.theoreticalTime} {(item.delay-(item.delay%60))/60 < 0 ?
+                            <div className = "DelayInfo">{item.theoreticalTime} {(item.delay-(item.delay%60))/60 < 0 ?
                                 <>- {((item.delay-(item.delay%60))/60)*-1}</> : 
-                                <>+ {(item.delay-(item.delay%60))/60}</>} min.</p> : 
-                            <p className = "DelayInfo">Brak opóźnienia</p>}
+                                <>+ {(item.delay-(item.delay%60))/60}</>} min.</div> : 
+                            <div className = "DelayInfo">Brak opóźnienia</div>}
                     </div>
                 </div>))}
             </div>
