@@ -26,6 +26,11 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if(!searchQuery){
+      setStopsID(undefined);
+      setStopID(undefined);
+      return;
+    }
     setStopsID(getStopID(searchQuery))
   }, [searchQuery])
 
