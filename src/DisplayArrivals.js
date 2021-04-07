@@ -41,7 +41,6 @@ export const DisplayArrivals = ({stopID}) => {
                                 <>- {((item.delay-(item.delay%60))/60)*-1}</> : 
                                 <>+ {(item.delay-(item.delay%60))/60}</>} min.</p> : 
                             <p className = "DelayInfo">Brak opóźnienia</p>}
-                        <p className = "Separator">==================</p>
                     </div>
                 </div>))}
             </div>
